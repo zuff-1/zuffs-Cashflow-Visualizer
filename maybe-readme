@@ -1,0 +1,1 @@
+hello, this began as a challenge for me to use lists and stuff, but im planning to expand on the idea.
