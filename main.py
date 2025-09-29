@@ -16,6 +16,14 @@ def function_exit_program():
     input("Press Enter one more time to exit.")
     sys.exit()
 
+def function_safe_number_input(prompt_text):
+    while True:
+        try:
+            value = float(input(prompt_text))
+            return value
+        except ValueError:
+            print("Invalid input, please enter a valid number.")
+
 class class_item:
 
     def __init__(self, name, quantity, price):
@@ -56,7 +64,7 @@ class class_storage:
         print("\n\n====Total Price and Quantity====\n")
         print("Item Name | Total Quantity | Total Price")
         for row_index, item_name in enumerate(self.items):
-            print(f"{row_index+1}. {item_name[0]} | {item_name[1]} | {item_name[2]}$")
+            print(f"{row_index+1}. {item_name[0]} | {item_name[1]} | {item_name[2]:.2f}$")
         function_enter_to_continue()
         display1.method_choice_menu1()
 
@@ -77,8 +85,8 @@ class class_display:
                          "Enter item name: ")
             if name == "/done":
                 break
-            quantity = int(input("Enter item quantity: "))
-            price = int(input("Enter item price: "))
+            quantity = function_safe_number_input("Enter item quantity: ")
+            price = function_safe_number_input("Enter item price: ")
             storage1.method_add_item(name, quantity, price)
     
     def method_choice_menu1(self):
