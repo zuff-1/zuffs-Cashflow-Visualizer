@@ -1,5 +1,6 @@
-# v0.2.11
-# full rewrite with classes
+# v0.2.14
+
+# function exit program still not inside of class_display
 
 import sys
 import os
